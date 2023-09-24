@@ -1,0 +1,37 @@
+﻿@model MVCCommercialAutomation.Models.Classes.Employes
+@{
+    ViewBag.Title = "EmployesAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Personel Ekle</h2>
+<br />
+@using (Html.BeginForm("EmployesAdd", "Employes", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.EmployesName)
+    @Html.TextBoxFor(x => x.EmployesName, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.EmployesSurname)
+    @Html.TextBoxFor(x => x.EmployesSurname, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.EmployesAddress)
+    @Html.TextBoxFor(x => x.EmployesAddress, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.EmployesMail)
+    @Html.TextBoxFor(x => x.EmployesMail, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.EmployesPic)
+    <input type="file" name="EmployesPic" />
+    <br />
+    @Html.LabelFor(x => x.Department)
+    @Html.DropDownListFor(x => x.DepartmentId, (List<SelectListItem>)ViewBag.department, new { @class = "form-control" })
+<br />  
+    @* @Html.TextBoxFor(x => x.CategoryId, new { @class = "form-control" })*@
+    <button class="btn btn-primary">Kaydet</button>
+
+</form>
+
+}
+

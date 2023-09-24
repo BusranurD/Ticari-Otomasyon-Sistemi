@@ -1,0 +1,59 @@
+﻿@using MVCCommercialAutomation.Models.Classes
+@model List<ToDoList>
+
+<section class="col-lg-7 connectedSortable">
+
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                <i class="ion ion-clipboard mr-1"></i>
+                Yapılacak Listesi
+            </h3>
+
+            <div class="card-tools">
+                <ul class="pagination pagination-sm">
+                    <li class="page-item"><a href="#" class="page-link">&laquo;</a></li>
+                    <li class="page-item"><a href="#" class="page-link">1</a></li>
+                    <li class="page-item"><a href="#" class="page-link">2</a></li>
+                    <li class="page-item"><a href="#" class="page-link">3</a></li>
+                    <li class="page-item"><a href="#" class="page-link">&raquo;</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <ul class="todo-list" data-widget="todo-list">
+                @foreach (var x in Model)
+                {
+                    <li>
+                        <!-- drag handle -->
+                        <span class="handle">
+                            <i class="fas fa-ellipsis-v"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </span>
+                        <!-- checkbox -->
+                        <div class="icheck-primary d-inline ml-2">
+                            <input type="checkbox" value="" name="todo1" id="@("todoCheck"+x.TodolistID)">
+                            <label for="@("todoCheck"+x.TodolistID)"></label>
+                        </div>
+                        <!-- todo text -->
+                        <span class="text">@x.Title</span>
+                        <!-- Emphasis label -->
+                        <small class="badge badge-danger"><i class="far fa-clock"></i></small>
+                        <!-- General tools such as edit or delete-->
+                        <div class="tools">
+                            <i class="fas fa-edit"></i>
+                            <i class="fas fa-trash-o"></i>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer clearfix">
+            <button type="button" class="btn btn-info float-right"><i class="fas fa-plus"></i> Add item</button>
+        </div>
+    </div>
+    <!-- /.card -->
+</section>
+

@@ -1,0 +1,24 @@
+﻿@model MVCCommercialAutomation.Models.Classes.Customer
+@{
+    ViewBag.Title = "CustomerAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Yeni Müşteri Ekle</h2>
+<br />
+<form method="post" class="form-group">
+    @Html.LabelFor(x => x.CustomerName)
+    @Html.TextBoxFor(x => x.CustomerName, new { @class = "form-control" })
+
+    @Html.LabelFor(x => x.CustomerSurname)
+    @Html.TextBoxFor(x => x.CustomerSurname, new { @class = "form-control" })
+
+    @Html.LabelFor(x => x.CustomerAddress)
+    @Html.TextBoxFor(x => x.CustomerAddress, new { @class = "form-control" })
+
+    @Html.LabelFor(x => x.CustomerMail)
+    @Html.TextBoxFor(x => x.CustomerMail, new { @class = "form-control" })
+
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>

@@ -1,0 +1,21 @@
+﻿@using MVCCommercialAutomation.Models.Classes
+@model List<CargoTracking>
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_ProfileLayout.cshtml";
+}
+
+<br />
+<table class="table table-striped">
+    <tr>
+        <th>Açıklama</th>
+        <th>Tarih</th>
+    </tr>
+    @foreach (var c in Model)
+    {
+        <tr>
+            <td>@c.Description</td>
+            <td>@c.Date</td>
+        </tr>
+    }
+</table>

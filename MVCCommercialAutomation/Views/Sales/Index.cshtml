@@ -1,0 +1,59 @@
+﻿@using MVCCommercialAutomation.Models.Classes
+@model List<SalesTransaction>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+    <br />
+<table id="tbl1" class="table table-bordered" style="margin-top:20px;">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Ürün Bilgileri</th>
+            <th>Müşteri Adı</th>
+            <th>Personel Adı</th>
+            <th>Adet</th>
+            <th>Fiyat</th>
+            <th>Toplam</th>
+            <th>Tarih</th>
+            <th>Güncelle</th>
+            <th>Detaylar</th>
+        </tr>
+    </thead>
+    @foreach (var s in Model)
+    {
+        <tbody>
+            <tr>
+                <td>@s.SalesTransactionID</td>
+                <td>@s.Product.ProductName</td>
+                <td>@s.Customers.CustomerName @s.Customers.CustomerSurname</td>
+                <td>@s.Employes.EmployesName @s.Employes.EmployesSurname</td>
+                <td>@s.Totalpcs</td>
+                <td>@s.Price</td>
+                <td>@s.TotalPrice</td>
+                <td>@s.Date</td>
+                <td><a href="/Sales/SalesGet/@s.SalesTransactionID" class="btn btn-primary">Güncelle</a></td>
+                <td><a href="/Sales/Detail/@s.SalesTransactionID" class="btn btn-default" style="background-color: cadetblue; color: white">Detaylar</a></td>
+            </tr>
+        </tbody>
+    }
+
+</table>
+<a href="/Sales/SalesAdd" class="btn btn-success">Yeni Satış Girişi</a>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script>
+
+    $('#tbl1').dataTable({});
+
+</script>

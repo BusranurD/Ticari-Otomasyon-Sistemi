@@ -1,0 +1,34 @@
+﻿@using MVCCommercialAutomation.Models.Classes
+@model List<Customer>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+    <br />  
+<table class="table table-striped">
+    <tr>
+        <th>Müşteri ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Şehir</th>
+        <th>Mail</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach(var c in Model)
+    {
+<tr>
+    <td>@c.CustomerID</td>
+    <td>@c.CustomerName</td>
+    <td>@c.CustomerSurname</td>
+    <td>@c.CustomerAddress</td>
+    <td>@c.CustomerMail</td>
+    <td><a href="/Customer/CustomerDelete/@c.CustomerID" class="btn btn-danger">Sil</a></td>
+    <td><a href="/Customer/CustomerGet/@c.CustomerID" class="btn btn-primary">Güncelle</a></td>
+    <td><a href="/Customer/SalesHistory/@c.CustomerID" class="btn btn-default" style="background-color: cadetblue; color: white">Satış Geçmişi</a></td>
+</tr>
+    }
+</table>
+<a href="/Customer/CustomerAdd" class="btn btn-success">Müşteri Ekle</a>
+

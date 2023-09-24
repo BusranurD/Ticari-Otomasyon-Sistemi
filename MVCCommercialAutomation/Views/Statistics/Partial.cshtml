@@ -1,0 +1,31 @@
+﻿@model IEnumerable<MVCCommercialAutomation.Models.Classes.CategoryGroup>
+<div class="card-body p-0">
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th style="width: 10px">#</th>
+                <th>Departman</th>
+                <th>-</th>
+                <th style="width: 40px">Sayı</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{int id = 0;}
+            @foreach (var x in Model)
+            {
+                <tr>
+
+                    <td>@{id++;}@id.</td>
+                    <td>@x.Category</td>
+                    <td>
+                        <div class="progress progress-xs">
+                            <div class="progress-bar progress-bar-danger" style="width: @(x.Total * 100 / ViewBag.d)%;"></div>
+                        </div>
+                    </td>
+                    <td><span class="badge bg-danger">@x.Total</span></td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

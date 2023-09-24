@@ -1,0 +1,39 @@
+﻿@using MVCCommercialAutomation.Models.Classes
+@model List<Cargo>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+@using (Html.BeginForm("Index", "Cargo", FormMethod.Get))
+{
+    <p>
+        Kargo Takip Numarası :  @Html.TextBox("temp")
+        <input type="submit" value="Ara" />
+    </p>
+}
+
+<table class="table table-bordered" style="margin-top:20px;">
+    <tr>
+        <th>Takip Kodu</th>
+        <th>Personel</th>
+        <th>Alıcı</th>
+        <th>Tarih</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach (var c in Model)
+    {
+        <tr>
+            <td>@c.TrackingNo</td>
+            <td>@c.Employes</td>
+            <td>@c.Recipient</td>
+            <td>@c.Date</td>
+            <td><a href="/Cargo/CargoTracking/@c.TrackingNo" class="btn btn-default" style="background-color: cadetblue; color: white">Detaylar</a></td>
+        </tr>
+    }
+
+</table>
+<a href="/Cargo/CargoAdd" class="btn btn-success">Yeni Kargo Girişi</a>
+
+

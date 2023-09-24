@@ -1,0 +1,386 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <!-- Custom Theme files -->
+
+    <link href="~/web2/css/style.css" rel="stylesheet" type="text/css" media="all" />
+
+    <!-- Custom Theme files -->
+
+    <script src="~/web2/js/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="~/web2/css/font-awesome.css">
+
+    <!-- Custom Theme files -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta name="keywords" content="Metro Panel Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+    <!--webfont-->
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <script src="/Scripts/zingchart.min.js"></script>
+
+    <script src="/Scripts/zingchart.jquery.js"></script>
+
+    <script src="~/web2js/jquery.easydropdown.js"></script>
+
+    <script src="~/web2js/jquery.nicescroll.js"></script>
+
+    <link href="css/jqvmap.css" media="screen" rel="stylesheet" type="text/css" />
+
+    <script src="~/web2/js/easyResponsiveTabs.js" type="text/javascript"></script>
+
+    <link href="~/web2/css/nav.css" rel="stylesheet" type="text/css" media="all" />
+
+    <script src="~/web2/js/main.js"></script> <!-- Resource jQuery -->
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Tempusdominus Bbootstrap 4 -->
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/plugins/jqvmap/jqvmap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/dist/css/adminlte.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/plugins/daterangepicker/daterangepicker.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/plugins/summernote/summernote-bs4.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <!-- chart -->
+
+    <script src="~/web2/js/Chart1.js"></script>
+
+    <!-- //chart -->
+
+</head>
+
+<body>
+
+    <div class="total-content">
+
+        <div class="list_of_members">
+
+            <div class="sales" style="background-color:#1abc9c">
+
+                <div class="icon-text">
+
+                    <h3>@ViewBag.d1</h3>
+
+                    <p>Toplam Cari</p>
+
+                </div>
+
+                <div class="clearfix"></div>
+
+            </div>
+
+            <div class="new-users" style="background-color:#2ecc71">
+
+                <div class="icon-text">
+
+                    <h3>@ViewBag.d2</h3>
+
+                    <p>Ürün Sayısı</p>
+
+                </div>
+
+                <div class="clearfix"></div>
+
+            </div>
+
+            <div class="orders" style="background-color:#3498db">
+
+                <div class="icon-text">
+
+                    <h3>@ViewBag.d3</h3>
+
+                    <p>Personel Sayısı</p>
+
+                </div>
+
+                <div class="clearfix"></div>
+
+            </div>
+
+            <div class="visitors" style="background-color:#9b59b6">
+
+                <div class="icon-text">
+
+                    <h3>@ViewBag.d4</h3>
+
+                    <p>Kategori Sayısı</p>
+
+                </div>
+
+                <div class="clearfix"></div>
+
+            </div>
+
+            <div class="clearfix"></div>
+
+        </div>
+
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="total-content">
+
+        <div class="list_of_members">
+
+            <div class="sales" style="background-color:#16a085">
+
+                <div class="icon-text">
+
+                    <h3>@ViewBag.d5</h3>
+
+                    <p>Toplam Stok</p>
+
+                </div>
+
+                <div class="clearfix"></div>
+
+            </div>
+
+            <div class="new-users" style="background-color:#27ae60">
+
+                <div class="icon-text">
+
+                    <h3>@ViewBag.d6</h3>
+
+                    <p>Marka Sayısı</p>
+
+                </div>
+
+                <div class="clearfix"></div>
+
+            </div>
+
+            <div class="orders" style="background-color:#2980b9">
+
+                <div class="icon-text">
+
+                    <h3>@ViewBag.d7</h3>
+
+                    <p>Kritik Seviye</p>
+
+                </div>
+
+                <div class="clearfix"></div>
+
+            </div>
+
+            <div class="visitors" style="background-color:#8e44ad">
+
+                <div class="icon-text">
+
+                    <h3>@ViewBag.d8</h3>
+
+                    <p>Max Fiyatlı Ürün</p>
+
+                </div>
+
+                <div class="clearfix"></div>
+
+            </div>
+
+            <div class="clearfix"></div>
+
+        </div>
+
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="total-content">
+
+        <div class="list_of_members">
+
+            <div class="sales" style="background-color:#f1c40f">
+
+                <div class="icon-text">
+
+                    <h3>@ViewBag.d9</h3>
+
+                    <p>Min Fiyatlı Ürün</p>
+
+                </div>
+
+                <div class="clearfix"></div>
+
+            </div>
+
+            <div class="new-users" style="background-color:#e67e22">
+
+                <div class="icon-text">
+
+                    <h3>@ViewBag.d12</h3>
+
+                    <p>Max Marka</p>
+
+                </div>
+
+                <div class="clearfix"></div>
+
+            </div>
+
+            <div class="orders" style="background-color:#e74c3c">
+
+                <div class="icon-text">
+
+                    <h3>@ViewBag.d10</h3>
+
+                    <p>Buzdolabı Sayısı</p>
+
+                </div>
+
+                <div class="clearfix"></div>
+
+            </div>
+
+            <div class="visitors" style="background-color:#95a5a6">
+
+                <div class="icon-text">
+
+                    <h3>@ViewBag.d11</h3>
+
+                    <p>Laptop Sayısı</p>
+
+                </div>
+
+                <div class="clearfix"></div>
+
+            </div>
+
+            <div class="clearfix"></div>
+
+        </div>
+
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="total-content">
+
+        <div class="list_of_members">
+
+            <div class="sales" style="background-color:#f39c12">
+
+                <div class="icon-text">
+
+                    <h3>@ViewBag.d13</h3>
+
+                    <p>En Çok Satan</p>
+
+                </div>
+
+                <div class="clearfix"></div>
+
+            </div>
+
+            <div class="new-users" style="background-color:#d35400">
+
+                <div class="icon-text">
+
+                    <h3>@ViewBag.d14</h3>
+
+                    <p>Kasadaki Tutar</p>
+
+                </div>
+
+                <div class="clearfix"></div>
+
+            </div>
+
+            <div class="orders" style="background-color:#c0392b">
+
+                <div class="icon-text">
+
+                    <h3>@ViewBag.d15</h3>
+
+                    <p>Bugünkü Satşlar</p>
+
+                </div>
+
+                <div class="clearfix"></div>
+
+            </div>
+
+            <div class="visitors" style="background-color:#7f8c8d">
+
+                <div class="icon-text">
+
+                    <h3>@ViewBag.d16</h3>
+
+                    <p>Bugünkü Kasa</p>
+
+                </div>
+
+                <div class="clearfix"></div>
+
+            </div>
+
+            <div class="clearfix"></div>
+
+        </div>
+        @Html.Action("TodoList", "Statistics")
+    </div>
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button)
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- ChartJS -->
+    <script src="~/AdminLTE-3.0.4/plugins/chart.js/Chart.min.js"></script>
+    <!-- Sparkline -->
+    <script src="~/AdminLTE-3.0.4/plugins/sparklines/sparkline.js"></script>
+    <!-- JQVMap -->
+    <script src="~/AdminLTE-3.0.4/plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="~/AdminLTE-3.0.4/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="~/AdminLTE-3.0.4/plugins/jquery-knob/jquery.knob.min.js"></script>
+    <!-- daterangepicker -->
+    <script src="~/AdminLTE-3.0.4/plugins/moment/moment.min.js"></script>
+    <script src="~/AdminLTE-3.0.4/plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="~/AdminLTE-3.0.4/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Summernote -->
+    <script src="~/AdminLTE-3.0.4/plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="~/AdminLTE-3.0.4/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/AdminLTE-3.0.4/dist/js/adminlte.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="~/AdminLTE-3.0.4/dist/js/pages/dashboard.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="dist/js/demo.js"></script>
+</body>
+
+</html>

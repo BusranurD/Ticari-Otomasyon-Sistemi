@@ -1,0 +1,38 @@
+﻿@model MVCCommercialAutomation.Models.Classes.SalesTransaction
+@{
+    ViewBag.Title = "Sales";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+} 
+
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.ProductId)
+    <input type="text" name="ProductId" value="@ViewBag.id" class = "form-control" readonly/>
+    <br />
+    @Html.LabelFor(x => x.CustomerId)
+    @Html.TextBoxFor(x => x.CustomerId, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Employes)
+    @Html.DropDownListFor(x => x.EmployesId, (List<SelectListItem>)ViewBag.employes, new { @class = "form-control" })
+
+    <br />
+    @Html.LabelFor(x => x.Totalpcs)
+    <input type="number" name="Totalpcs" class="form-control" maxlength="1000" min="1" id="pcs" onkeyup="sum();"/>
+    <br />
+    @Html.LabelFor(x => x.Price)
+    <input type="text" name="Price" class="form-control" placeholder="@ViewBag.price" id="price" onkeyup="sum();"/>
+    <br />
+    @Html.LabelFor(x => x.TotalPrice)
+    <input type="text" name="TotalPrice" id="result" class="form-control" />
+    <br />
+    <button class="btn btn-primary" style="background-color:#1c6071;border: none;">Satış Yap</button>
+
+</form>
+<script>
+    function sum() {
+        var pcs = document.getElementById('pcs').value;
+        var price = document.getElementById('price').value;
+        document.getElementById("result").value = parseInt(pcs) * parseInt(price);
+        
+    }
+</script>

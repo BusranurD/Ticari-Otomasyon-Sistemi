@@ -1,0 +1,108 @@
+﻿@model MVCCommercialAutomation.Models.Classes.Customer
+@using (Html.BeginForm("Update", "Profile", FormMethod.Post))
+{
+    <form class="form-horizontal">
+        @Html.HiddenFor(x => x.CustomerID)
+
+        <div class="form-group row">
+
+            <label for="CustomerName" class="col-sm-2 col-form-label">İsim</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.CustomerName, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <label for="CustomerSurname" class="col-sm-2 col-form-label">Soyisim</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.CustomerSurname, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <label for="CustomerMail" class="col-sm-2 col-form-label">Email</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.CustomerMail, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <label for="CustomerAddress" class="col-sm-2 col-form-label">Adres</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.CustomerAddress, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <label for="Job" class="col-sm-2 col-form-label">Meslek</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.Job, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <label for="Password" class="col-sm-2 col-form-label">Şifre</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <div class="offset-sm-2 col-sm-10">
+
+                <div class="checkbox">
+
+                    <label>
+
+                        <input type="checkbox"><a href="#">  Bilgilerimi Onaylıyorum.</a>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <div class="offset-sm-2 col-sm-10">
+
+                <button type="submit" class="btn btn-danger">Güncelle</button>
+
+            </div>
+
+        </div>
+
+    </form>
+}

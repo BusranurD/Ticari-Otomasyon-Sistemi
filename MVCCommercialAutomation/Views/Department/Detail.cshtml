@@ -1,0 +1,27 @@
+﻿@using MVCCommercialAutomation.Models.Classes
+@model List<Employes>
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+    <br />  
+<h2>Departman Detayları</h2>
+<br />
+<ol class="breadcrumb mb-4"  style="background-color:lightgray; height:45px; align-content: center; padding-left: 10px">
+    <li class="breadcrumb-item active">Departman Adı: @ViewBag.d</li>
+</ol>
+
+<table class="table table-hover">
+    <tr>
+        <th>Ad Soyad</th>
+        <th>Satışlar</th>
+    </tr>
+
+    @foreach(var empl in Model){ 
+    <tr>
+        <td>@empl.EmployesName @empl.EmployesSurname</td>
+        <td><a href="/Department/DepartmentEmployesInvoice/@empl.EmployesID" class="btn btn-default" style="background-color:khaki">Satışlar</a></td>
+
+    </tr>
+    }
+</table>

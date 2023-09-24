@@ -1,0 +1,38 @@
+﻿@model MVCCommercialAutomation.Models.Classes.Customer
+<div class="modal fade" id="membershipForm" tabindex="-1" role="dialog" aria-labelledby="membershipFormLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <h2 class="modal-title" id="membershipFormLabel">Yeni Müşteri Kaydı</h2>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form class="membership-form webform" role="form" method="post">
+                    <input type="text" class="form-control" name="CustomerName" placeholder="Ad">
+
+                    <input type="text" class="form-control" name="CustomerSurname" placeholder="Soyad">
+                    <input type="text" class="form-control" name="CustomerAddress" placeholder="Şehir">
+                    <input type="email" class="form-control" name="CustomerMail" placeholder="E-posta">
+                    <input type="password" class="form-control" name="Password" Placeholder="Şifre" required="" />
+
+                    <input class="form-control" id="hover" type="submit" value="Kayıt Ol">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="signup-agree">
+                        <label class="custom-control-label text-small text-muted" for="signup-agree">
+                            <a href="#">İletişim bilgilerime elektronik ileti gönderilmesine izin veriyorum.</a>
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer"></div>
+
+        </div>
+    </div>
+</div>

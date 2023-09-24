@@ -1,0 +1,44 @@
+﻿@using MVCCommercialAutomation.Models.Classes
+@model List<Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+    <br />
+@using (Html.BeginForm("Index", "Product", FormMethod.Get))
+{
+    <p>
+        Ürün Adı : @Html.TextBox("temp")
+        <input type="submit" value="Ara"/>
+    </p>
+}
+    <br />
+    <table class="table table-bordered">
+        <tr>
+            <th>ÜRÜN</th>
+            <th>MARKA</th>
+            <th>STOK</th>
+            <th>ALIŞ FİYATI</th>
+            <th>SATIŞ FİYATI</th>
+            <th>KATEGORİ</th>
+            <th>SİL</th>
+            <th>GÜNCELLE</th>
+            <th>SATIŞ YAP</th>
+        </tr>
+        @foreach(var p in Model)
+        {
+            <tr>    
+                <td>@p.ProductName</td>     
+                <td>@p.Trademark</td>     
+                <td>@p.Stock</td>     
+                <td>@p.PurchasePrice ₺</td>     
+                <td>@p.Price ₺</td>     
+                <td>@p.Category.CategoryName</td>         
+                <td><a href="/Product/ProductDelete/@p.ProductID" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Product/ProductGet/@p.ProductID" class="btn btn-primary">Güncelle</a></td>
+                <td><a href="/Product/Sales/@p.ProductID" class="btn btn-default" style="background-color: cadetblue; color: white">Satış Yap</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/Product/Sales" class="btn btn-success">Yeni Ürün</a>

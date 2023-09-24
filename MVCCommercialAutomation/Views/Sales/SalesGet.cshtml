@@ -1,0 +1,37 @@
+﻿@model MVCCommercialAutomation.Models.Classes.SalesTransaction
+@{
+    ViewBag.Title = "SalesGet";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Satış İşlemi Güncelleme</h2>
+<br />
+@using (Html.BeginForm("SalesUpdate", "Sales", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.HiddenFor(x => x.SalesTransactionID)
+        @Html.LabelFor(x => x.Product)
+        @Html.DropDownListFor(x => x.ProductId, (List<SelectListItem>)ViewBag.product, new { @class = "form-control" })
+        <br />
+        @Html.Label("Müşteri")
+        @Html.DropDownListFor(x => x.CustomerId, (List<SelectListItem>)ViewBag.customer, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Employes)
+        @Html.DropDownListFor(x => x.EmployesId, (List<SelectListItem>)ViewBag.employes, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Totalpcs)
+        @Html.TextBoxFor(x => x.Totalpcs, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Price)
+        @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.TotalPrice)
+        @Html.TextBoxFor(x => x.TotalPrice, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Date)
+        @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-default" style="background-color:khaki">Güncelle</button>
+        </div>
+        }
+

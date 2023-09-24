@@ -1,0 +1,26 @@
+﻿@model MVCCommercialAutomation.Models.Classes.Category
+@{
+    ViewBag.Title = "_CategoryAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<br />
+<h2>Yeni Kategori Ekle</h2>
+<br />
+<form method="post" class="form-group">
+    @Html.LabelFor(x => x.CategoryName)
+
+    @Html.TextBoxFor(x => x.CategoryName, new
+    {
+    @class = "form-control"
+    })
+    <br />
+    <button class="btn btn-info"  id="Alert">Kaydet</button>
+    <script>
+        $('#Alert').click(function () {
+            swal("Kategori Kaydedildi.")
+        });
+    </script>
+</form>
+

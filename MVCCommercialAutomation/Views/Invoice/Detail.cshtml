@@ -1,0 +1,32 @@
+﻿@using MVCCommercialAutomation.Models.Classes
+@model List<InvoiceItem>
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Fatura Kalemleri</h2>
+<br />
+
+<table class="table table-hover">
+    <tr>
+        <th>Id</th>
+        <th>Açıklama</th>
+        <th>Miktar</th>
+        <th>Birim Fiyat</th>
+        <th>Tutar</th>
+    </tr>
+
+    @foreach (var inv in Model)
+    {
+        <tr>
+            <td>@inv.InvoiceItemID</td>
+            <td>@inv.Description</td>
+            <td>@inv.Amount</td>
+            <td>@inv.UnitPrice</td>
+            <td>@inv.Price</td>
+        </tr>
+    }
+    </table>
+   <a href="/Invoice/NewInvoiceItem" class="btn btn-default" style="background-color:khaki">Yeni Fatura Kalemi Gir</a>

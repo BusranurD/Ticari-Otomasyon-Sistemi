@@ -1,0 +1,39 @@
+﻿@using MVCCommercialAutomation.Models.Classes
+@model List<SalesTransaction>
+@{
+    ViewBag.Title = "SalesHistory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Müşteri Sipariş Geçmişi</h2>
+<br />
+<ol class="breadcrumb mb-4" style="background-color:lightgray; height:45px; align-content: center; padding-left: 10px">
+    <li class="breadcrumb-item active">Müşteri Adı: @ViewBag.c</li>
+</ol>
+<table class="table table-condensed">
+    <tr>
+        <th>Satış Id</th>
+        <th>Ürün</th>
+        <th>Personel</th>
+        <th>Fiyat</th>
+        <th>Adet</th>
+        <th>Toplam Tutar</th>
+        <th>Tarih</th>
+        <th>Yazdır</th>
+
+    </tr>
+    @foreach (var d in Model)
+    {
+        <tr>
+            <td>@d.SalesTransactionID</td>
+            <td>@d.Product.ProductName</td>
+            <td>@d.Employes.EmployesName  @d.Employes.EmployesSurname</td>
+            <td>@d.Price</td>
+            <td>@d.Totalpcs</td>
+            <td>@d.TotalPrice</td>
+            <td>@d.Date</td>
+            <td><a href="#" class="btn btn-default" style="background-color:lightblue">Yazdır</a></td>
+        </tr>
+    }
+</table>

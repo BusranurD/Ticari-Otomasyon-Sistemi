@@ -1,0 +1,30 @@
+﻿@using MVCCommercialAutomation.Models.Classes
+@model List<Department>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<table class="table table-bordered" style="margin-top:20px;">
+    <tr>
+        <th>ID</th>
+        <th>Departman Adı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach (var c in Model)
+    {
+        <tr>
+            <td>@c.DepartmentID</td>
+            <td>@c.DepartmentName</td>
+            <td><a href="/Department/DepartmentDelete/@c.DepartmentID" class=" btn btn-danger">Sil</a></td>
+            <td><a href="/Department/DepartmentGet/@c.DepartmentID" class="btn btn-primary">Güncelle</a></td>
+            <td><a href="/Department/Detail/@c.DepartmentID" class="btn btn-default" style="background-color: cadetblue; color: white">Detaylar</a></td>
+        </tr>
+    }
+
+</table>
+<a href="/Department/DepartmentAdd" class="btn btn-success">Departman Ekle</a>
+

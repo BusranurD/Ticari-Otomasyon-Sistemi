@@ -1,0 +1,64 @@
+﻿@using MVCCommercialAutomation.Models.Classes
+@model List<Invoice>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px;">
+    <tr>
+        <th>Seri&Sıra No</th>
+        <th>Vergi Dairesi</th>
+        <th>Tarih</th>
+        <th>Saat</th>
+        <th>Teslim Eden</th>
+        <th>Teslim Alan</th>
+        <th>Toplam Tutar</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach (var c in Model)
+    {
+<tr>
+    <td>@c.InvoiceSerialNumber - @c.InvoiceDetailNo</td>
+    <td>@c.TaxOffice</td>
+    <td>@Convert.ToDateTime(c.Date).ToString("dd/MM/yyyy")</td>
+    <td>@c.Time</td>
+    <td>@c.Vendor</td>
+    <td>@c.Recipient</td>
+    <td>@c.TotalPrice</td>
+    <td><a href="/Invoice/InvoiceGet/@c.InvoiceID" class="btn btn-primary">Güncelle</a></td>
+    <td><a href="/Invoice/Detail/@c.InvoiceID" class="btn btn-default" style="background-color: cadetblue; color: white">Kalem Detayları</a></td>
+</tr>
+    }
+
+</table>
+<a href="/Invoice/InvoiceAdd" class="btn btn-success">Yeni Fatura Girişi</a>
+<br /> <br />
+<a class="btn custom-btn bg-color " style="background-color:palevioletred; color:white" data-bs-toggle="modal"  data-bs-target="#newOrderModal" >Popup</a>
+
+<div class="modal" id="newOrderModal" role="dialog">
+    <div class="modal-dialog  modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Popup</h2>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Seri & Sıra No</th>
+                        <th>Tutar</th>
+                    </tr>
+                    @foreach(var x in Model)
+                    {
+                        <tr>
+                            <td>@x.InvoiceSerialNumber - @x.InvoiceDetailNo</td>
+                            <td>@x.TotalPrice</td>
+                        </tr>
+                    }
+                </table>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Kapat</button>
+            </div>
+        </div>
+    </div>
+</div>

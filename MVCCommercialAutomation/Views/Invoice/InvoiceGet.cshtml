@@ -1,0 +1,37 @@
+﻿@model MVCCommercialAutomation.Models.Classes.Invoice
+@{
+    ViewBag.Title = "InvoiceGet";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Fatura Bilgilerini Güncelleme</h2>
+<br />
+@using (Html.BeginForm("InvoiceUpdate", "Invoice", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.HiddenFor(x => x.InvoiceID)
+        @Html.LabelFor(x => x.InvoiceSerialNumber)
+        @Html.TextBoxFor(x => x.InvoiceSerialNumber, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.InvoiceDetailNo)
+        @Html.TextBoxFor(x => x.InvoiceDetailNo, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.TaxOffice)
+        @Html.TextBoxFor(x => x.TaxOffice, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Date)
+        @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Time)
+        @Html.TextBoxFor(x => x.Time, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Vendor)
+        @Html.TextBoxFor(x => x.Vendor, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Recipient)
+        @Html.TextBoxFor(x => x.Recipient, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-default" style="background-color:khaki">Güncelle</button>
+        </div>
+        }

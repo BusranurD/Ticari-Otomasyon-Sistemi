@@ -1,0 +1,28 @@
+﻿@model MVCCommercialAutomation.Models.Classes.Cargo
+
+@{
+    ViewBag.Title = "CargoAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Yeni Kargo Girişi</h2>
+<br />
+<form method="post" class="form-group">
+    @Html.LabelFor(x => x.TrackingNo)
+    <input type="text" name="TrackingNo" value="@ViewBag.no" class="form-control" readonly />
+    <br />
+    @Html.LabelFor(x => x.Employes)
+    @Html.TextBoxFor(x => x.Employes, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Recipient)
+    @Html.TextBoxFor(x => x.Recipient, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Date)
+    <input type="date" name="Date" class="form-control" />
+    <br />
+    @Html.LabelFor(x => x.Description)
+    @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+
+</form>

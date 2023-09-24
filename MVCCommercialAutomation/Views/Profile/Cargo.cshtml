@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Cargo";
+    Layout = "~/Views/Shared/_ProfileLayout.cshtml";
+}
+
+<br />
+@using (Html.BeginForm("Cargo", "Profile", FormMethod.Get))
+{
+    <p>
+        Kargo Takip Numarası :  @Html.TextBox("temp")
+        <input type="submit" value="Ara" />
+    </p>
+}
+
+<table class="table table-bordered" style="margin-top:20px;">
+    <tr>
+        <th>Takip Kodu</th>
+        <th>Personel</th>
+        <th>Alıcı</th>
+        <th>Tarih</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach (var c in Model)
+    {
+        <tr>
+            <td>@c.TrackingNo</td>
+            <td>@c.Employes</td>
+            <td>@c.Recipient</td>
+            <td>@c.Date</td>
+            <td><a href="/Profile/Detail/@c.TrackingNo" class="btn btn-default" style="background-color: cadetblue; color: white">Detaylar</a></td>
+        </tr>
+    }
+
+</table>
+
